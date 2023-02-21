@@ -1,6 +1,12 @@
 package com.mahmoud.pokemon.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "fav_table")
 public class Pokemon {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String name, url;
 
     public Pokemon(String name, String url) {
