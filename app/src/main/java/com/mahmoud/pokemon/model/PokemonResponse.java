@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class PokemonResponse {
     private int count;
     private String next, previous;
-    private ArrayList<Pokemon> result;
+    private ArrayList<Pokemon> results;
 
-    public PokemonResponse(int count, String next, String previous, ArrayList<Pokemon> result) {
+    public PokemonResponse(int count, String next, String previous, ArrayList<Pokemon> results) {
         this.count = count;
         this.next = next;
         this.previous = previous;
-        this.result = result;
+        this.results = results;
     }
 
     public int getCount() {
@@ -38,11 +38,11 @@ public class PokemonResponse {
         this.previous = previous;
     }
 
-    public ArrayList<Pokemon> getResult() {
-        return result;
+    public ArrayList<Pokemon> getResults() {
+        return results;
     }
 
-    public void setResult(ArrayList<Pokemon> result) {
-        this.result = result;
+    public void setResults(ArrayList<Pokemon> results) {
+        this.results = results;
     }
 }
