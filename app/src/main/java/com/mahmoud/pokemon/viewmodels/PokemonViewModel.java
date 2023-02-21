@@ -3,6 +3,7 @@ package com.mahmoud.pokemon.viewmodels;
 import android.util.Log;
 
 import androidx.hilt.lifecycle.ViewModelInject;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -11,12 +12,13 @@ import com.mahmoud.pokemon.model.PokemonResponse;
 import com.mahmoud.pokemon.repository.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.functions.Function;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 public class PokemonViewModel extends ViewModel {
@@ -58,7 +60,7 @@ public class PokemonViewModel extends ViewModel {
         repository.insertPokemon(pokemon);
     }
 
-    public void deletePokemon(String pokmonName){repository.deletePokemon(pokmonName);}
+    public void deletePokemon(String pokemonName){repository.deletePokemon(pokemonName);}
 
-    public void getFavPokemons(){favList = repository.getFavPokemons()}
+    public void getFavPokemons(){favList = repository.getFavPokemons();}
 }

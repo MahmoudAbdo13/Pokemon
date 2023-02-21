@@ -20,5 +20,5 @@ public interface PokemonDao {
     void deletePokemon(String pokemonName);
 
     @Query("select * from fav_table")
-    LiveData<List<Pokemons>> getPokemons();
+    LiveData<List<Pokemon>> getPokemons();
 }
