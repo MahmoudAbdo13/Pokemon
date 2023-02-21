@@ -1,4 +1,4 @@
-package com.mahmoud.pokemon;
+package com.mahmoud.pokemon.model;
 
 public class Pokemon {
     private String name, url;
