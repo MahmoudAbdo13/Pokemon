@@ -22,6 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 public class PokemonViewModel extends ViewModel {
     private Repository repository;
     private MutableLiveData<ArrayList<Pokemon>> pokemList = new MutableLiveData<>();
+    private LiveData<List<Pokemon>> favList = null;
 
     @ViewModelInject
     public PokemonViewModel(Repository repository) {
@@ -52,4 +53,12 @@ public class PokemonViewModel extends ViewModel {
                 .subscribe(result -> pokemList.setValue(result),
                         error -> Log.e("viewModel: ", error.getMessage()));
     }
+
+    public void insertPokemon(Pokemon pokemon){
+        repository.insertPokemon(pokemon);
+    }
+
+    public void deletePokemon(String pokmonName){repository.deletePokemon(pokmonName);}
+
+    public void getFavPokemons(){favList = repository.getFavPokemons()}
 }

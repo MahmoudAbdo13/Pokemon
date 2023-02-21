@@ -14,11 +14,11 @@ import java.util.List;
 public interface PokemonDao {
 
     @Insert
-    public void insertPokemon(Pokemon pokemon);
+    void insertPokemon(Pokemon pokemon);
 
     @Query("Delete from fav_table where name =:pokemonName")
-    public void deletePokemon(String pokemonName);
+    void deletePokemon(String pokemonName);
 
     @Query("select * from fav_table")
-    public LiveData<List<Pokemon>> getPokemon();
+    LiveData<List<Pokemons>> getPokemons();
 }
