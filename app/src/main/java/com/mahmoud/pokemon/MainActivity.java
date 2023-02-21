@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 int swipedPokemonPosition = viewHolder.getAdapterPosition();
                 Pokemon swipedPokemon = adapter.getPokemonAt(swipedPokemonPosition);
                 viewModel.insertPokemon(swipedPokemon);
-
+                adapter.notifyDataSetChanged();
                 Toast.makeText(MainActivity.this, "Pokemon added to database", Toast.LENGTH_SHORT).show();
             }
         };

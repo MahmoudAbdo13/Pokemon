@@ -35,6 +35,10 @@ public class PokemonViewModel extends ViewModel {
         return pokemList;
     }
 
+    public LiveData<List<Pokemon>> getFavList() {
+        return favList;
+    }
+
     public void getPokemons(){
         repository.getPokemons()
                 .subscribeOn(Schedulers.io())
